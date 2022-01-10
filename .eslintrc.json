@@ -1,0 +1,73 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["react"],
+
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "no-constructor-return": ["error"],
+    "no-duplicate-imports": ["warn"],
+    "no-self-compare": ["warn"],
+    "no-template-curly-in-string": ["error"],
+    "no-unmodified-loop-condition": ["error"],
+    "no-unreachable-loop": ["warn"],
+    "no-unused-private-class-members": ["error"],
+    "no-unused-vars": ["error"],
+    "no-use-before-define": ["error"],
+    "require-atomic-updates": ["error"],
+    "arrow-body-style": ["error", "never"],
+    "block-scoped-var": ["error"],
+    "camelcase": ["error", { "properties": "always", "ignoreImports": false }],
+    "consistent-return": ["error"],
+    "curly": ["error"],
+    "default-case": ["error"],
+    "default-case-last": ["error"],
+    "dot-notation": ["error"],
+    "eqeqeq": ["error", "always"],
+    "func-names": ["error", "as-needed"],
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "init-declarations": ["error", "always"],
+    "max-classes-per-file": ["error", 1],
+    "max-depth": ["error", 4],
+    "max-lines": ["error", {"max": 300, "skipBlankLines": true}],
+    "multiline-comment-style": ["error", "starred-block"],
+    "no-confusing-arrow": ["warn", {"allowParens": true}],
+    "no-console": ["warn"],
+    "no-empty-function": ["warn"],
+    "no-eq-null": ["error"],
+    "no-eval": ["error"],
+    "no-floating-decimal": ["error"],
+    "no-implicit-coercion": ["error"],
+    "no-implicit-globals": ["warn"],
+    "no-implied-eval": ["error"],
+    "no-invalid-this": ["error"],
+    "no-iterator": ["error"],
+    "no-labels": ["error"],
+    "no-lone-blocks": ["error"],
+    "no-lonely-if": ["error"],
+
+    "semi": ["warn", "never"],
+    "quotes": ["warn", "single"],
+    "object-curly-spacing": ["warn", "always"],
+    "jsx-quotes": ["warn", "prefer-single"],
+    "comma-dangle": "off",
+    "react/jsx-filename-extension": "off"
+  }
+}

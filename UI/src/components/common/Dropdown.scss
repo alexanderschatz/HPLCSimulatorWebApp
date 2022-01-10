@@ -1,0 +1,30 @@
+// @import '../variables';
+
+.Dropdown {
+  position: relative;
+  width: 100%;
+
+  select {
+    cursor: pointer;
+    width: inherit;
+
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+
+    option {
+      &:disabled {
+        color: #e4e7ec !important;
+      }
+    }
+  }
+
+  .Icon {
+    pointer-events: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 32px;
+    height: 32px;
+  }
+}

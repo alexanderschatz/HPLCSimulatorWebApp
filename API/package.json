@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "0.1.2",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "export NODE_ENV=production && node src/server.js",
+    "lint": "esw src --color",
+    "dev": "nodemon src/server.js",
+    "lint:watch": "npm run lint -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async-mqtt": "^2.3.0",
+    "body-parser": "^1.19.0",
+    "config": "^3.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "js-sha512": "^0.8.0",
+    "lint": "^1.1.2",
+    "mqtt-regex": "^1.0.5",
+    "mysql2": "^1.6.4",
+    "nodemon": "^1.18.10",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-watch": "^5.1.2"
+  }
+}

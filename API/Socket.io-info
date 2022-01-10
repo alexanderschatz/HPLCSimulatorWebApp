@@ -1,0 +1,71 @@
+// Erstellung von Sockets zwischen einer React-App und Backend über Express
+
+/** 
+ * Serverside
+ * 
+ *  npm install socket.io 
+ *  npm install cors 
+*/
+const app = express()
+const server = require('http').createServer(app)
+const io = require('socket.io')(server)
+const cors = require('cors') 
+
+const express = require('express')
+
+//serverport - use different port for app
+const SERVERPORT = 8071
+
+//initialize cors rules
+app.use(cors({credentials: true, origin:true}))
+
+io.on('connection', socket => {
+	console.log('Client connected!')
+
+	// socket-stuff
+	socket.emit('news', {hello: 'world'})
+	socket.on('message', msg => {
+		console.log(msg)
+		// io.emit('chat message', msg)
+	})
+	//
+
+	socket.on('disconnect', () => {
+		console.log('Client disconnected')
+	})
+})
+
+server.listen(SERVERPORT, () => console.log(`server listening for clients on: ${SERVERPORT}`))
+
+//#####################################################################################################//
+
+/** 
+ * Clientside
+ * 
+ *  npm install socket.io-client
+*/ 
+
+import React, { Component } from 'react'
+import socketIOClient from 'socket.io-client'
+
+const socket = socketIOClient('localhost:8071')
+
+export default class App extends Component {
+
+    componentDidMount = async () => {
+		socket.on('news', news => {
+			console.log(news)
+		})
+		socket.emit('message', 'Hello there!')
+    }
+    
+    render() {
+        //render something
+    }
+}
+
+/**
+ * Tutorial mit mehr Informationen unter:
+ * https://codeburst.io/isomorphic-web-app-react-js-express-socket-io-e2f03a469cd3
+ * (Stand 12. Oktober 2017; zuletzt aufgerufen 05. Juli 2019)
+*/

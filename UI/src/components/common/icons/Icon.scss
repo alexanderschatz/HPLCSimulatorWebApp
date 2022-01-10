@@ -1,0 +1,14 @@
+// @import "../../variables";
+
+.Icon {
+  alignment: center;
+  display: inline-block;
+  pointer-events: none;
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+  &.red{ fill: #FF0000; }
+  &.orange{ fill: #ff8000; }
+  &.white{ fill: #ffffff; }
+  &.tableHeader{ fill: #495057}
+}

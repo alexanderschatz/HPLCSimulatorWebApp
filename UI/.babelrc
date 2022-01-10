@@ -1,0 +1,48 @@
+{
+  "env": {
+    "development": {
+      "presets": [[
+        "@babel/preset-env",
+        { 
+          "modules": false,
+          "useBuiltIns": "usage", // to avoid polyfills,
+        }
+      ], "@babel/preset-react"],
+      "plugins": ["@babel/plugin-proposal-class-properties"]
+    },
+    "production": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "ie": 9
+            },
+            "modules": false,
+            "useBuiltIns": "usage", // to avoid polyfills,
+            "forceAllTransforms": true
+          }
+        ],
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "transform-react-remove-prop-types"
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ],
+        "@babel/preset-react"
+      ],
+      "plugins": ["@babel/plugin-proposal-class-properties"]
+    }
+  }
+}
